@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -16,7 +17,6 @@ export default function WeatherSearch() {
       description: response.data.weather[0].description
     });
   }
-
   function handleSearch(event) {
     event.preventDefault();
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=49e5da6325b173bba5c08dae7a5eba79&units=metric`;

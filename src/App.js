@@ -6,10 +6,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-     
-        <h1> <WeatherSearch/></h1>
+       
+        <h1> React Weather Search App</h1>
+        <WeatherSearch/>
         </header>
-    </div>
+      </div>
   );
 }
 export default App;
