@@ -11,10 +11,9 @@ export default function WeatherSearch() {
   function showWeather(response) {
     setLoaded(true);
     setWeather({
-      temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${WeatherIcons[0].icon}@2x.png`,
+      icon: `http://openweathermap.org/img/wn/${WeatherIcons.ReactAnimatedWeatherIcons[0].icon}@2x.png`,
       description: response.data.weather[0].description
     });
   }
@@ -45,7 +44,7 @@ export default function WeatherSearch() {
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}km/h</li>
           <li>
-            <img src={weather.icon} alt={weather.description} />
+            <img src={WeatherIcons.ReactAnimatedWeatherIcons[0]} alt={weather.description} />
           </li>
         </ul>
     </div>
