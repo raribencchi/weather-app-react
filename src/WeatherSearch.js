@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ReactAnimatedWeather from "react-animated-weather";
-import WeatherIcons from './WeatheIcons';
 
 export default function WeatherSearch() {
   let [city, setCity] = useState(" ");
@@ -13,7 +11,7 @@ export default function WeatherSearch() {
     setWeather({
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${WeatherIcons.ReactAnimatedWeatherIcons[0].icon}@2x.png`,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description
     });
   }
@@ -44,7 +42,7 @@ export default function WeatherSearch() {
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}km/h</li>
           <li>
-            <img src={WeatherIcons.ReactAnimatedWeatherIcons[0]} alt={weather.description} />
+            <img src={weather.icon} alt={weather.description} />
           </li>
         </ul>
     </div>
